@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakarta Pusat – Jantung Pemerintahan & Bisnis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: radial-gradient(circle at top, #020617, #000000);
+      color: #f8fafc;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(2,6,23,0.6);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+    }
+    nav h2 { font-weight: 800; letter-spacing: 1px; }
+    nav span { color: #38bdf8; }
+    nav a {
+      color: #cbd5f5;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #38bdf8; }
+
+    /* HERO */
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(120deg, rgba(2,6,23,0.85), rgba(15,23,42,0.9)),
+        url('https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=1600&q=80') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 60px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeUp 1.2s ease;
+    }
+    header p {
+      max-width: 650px;
+      margin: 25px 0;
+      color: #cbd5f5;
+      animation: fadeUp 1.6s ease;
+    }
+    .btn {
+      display: inline-block;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: 700;
+      box-shadow: 0 0 30px rgba(56,189,248,0.5);
+      animation: fadeUp 2s ease;
+      transition: 0.3s;
+    }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 0 45px rgba(56,189,248,0.9); }
+
+    section { padding: 100px 60px; }
+    .section-title {
+      font-size: 2.6rem;
+      margin-bottom: 60px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    /* GLASS CARD */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+    }
+    .card {
+      background: rgba(2,6,23,0.6);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(148,163,184,0.15);
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      transition: 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 40px 80px rgba(56,189,248,0.35);
+    }
+    .card h3 { margin-bottom: 15px; color: #38bdf8; font-weight: 700; }
+    .card p { color: #cbd5f5; }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 35px;
+      text-align: center;
+    }
+    .stat {
+      background: linear-gradient(135deg, rgba(2,6,23,0.8), rgba(15,23,42,0.9));
+      padding: 50px 20px;
+      border-radius: 26px;
+      border: 1px solid rgba(148,163,184,0.15);
+    }
+    .stat h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .stat p { color: #cbd5f5; }
+
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 35px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(148,163,184,0.15);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width:768px) {
+      nav { padding: 15px 25px; }
+      header h1 { font-size: 2.6rem; }
+      header { padding: 120px 25px 40px; }
+      section { padding: 80px 25px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>Jakarta<span>Pusat</span></h2>
+  <div>
+    <a href="#tentang">Tentang</a>
+    <a href="#fakta">Fakta</a>
+    <a href="#visi">Visi</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Jantung<br>Pemerintahan & Bisnis Indonesia</h1>
+  <p>
+    Jakarta Pusat adalah pusat kendali nasional — tempat kekuasaan, ekonomi, sejarah, dan masa depan Indonesia bertemu dalam satu denyut kota.
+  </p>
+  <a href="#tentang" class="btn">Eksplor Jakarta Pusat</a>
+</header>
+
+<section id="galeri">
+  <h2 class="section-title">Ikon & Kawasan Strategis</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1575488766570-5a4e1b0c7c6f?auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:16px; margin-bottom:15px;">
+      <h3>Monumen Nasional</h3>
+      <p>Landmark utama Indonesia sebagai simbol kemerdekaan dan pusat orientasi nasional.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581091870627-3f9c7f4f1b84?auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:16px; margin-bottom:15px;">
+      <h3>Kawasan Thamrin</h3>
+      <p>Pusat bisnis modern dengan gedung perkantoran, hotel, dan pusat keuangan nasional.</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1602573991155-21f0143bb28a?auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:16px; margin-bottom:15px;">
+      <h3>Masjid Istiqlal</h3>
+      <p>Masjid terbesar di Asia Tenggara, simbol toleransi dan keberagaman bangsa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tentang">
+  <h2 class="section-title">Mengapa Jakarta Pusat?</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Pusat Pemerintahan Nasional</h3>
+      <p>
+        Jakarta Pusat merupakan inti pemerintahan Republik Indonesia. Di wilayah ini berdiri Istana Merdeka dan Istana Negara sebagai pusat kekuasaan eksekutif, serta kantor-kantor kementerian strategis seperti Kementerian Keuangan, Kementerian Luar Negeri, dan Kementerian Sekretariat Negara. Dari kawasan inilah arah kebijakan nasional dirumuskan, diputuskan, dan dijalankan.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Poros Bisnis & Keuangan</h3>
+      <p>
+        Kawasan Thamrin–Sudirman menjadi tulang punggung aktivitas bisnis dan keuangan Indonesia. Gedung perkantoran bertaraf internasional, kantor pusat BUMN, bank nasional dan global, hingga perusahaan multinasional beroperasi di sini. Jakarta Pusat menjadi simbol stabilitas ekonomi dan kepercayaan investor.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Pusat Sejarah & Identitas Bangsa</h3>
+      <p>
+        Jakarta Pusat menyimpan jejak sejarah perjuangan dan identitas nasional. Monumen Nasional (Monas) menjadi simbol kemerdekaan, sementara Museum Nasional, Masjid Istiqlal, dan Gereja Katedral mencerminkan nilai sejarah, budaya, dan toleransi yang hidup berdampingan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="statistik">
+  <h2 class="section-title">Statistik Jakarta Pusat</h2>
+  <p style="text-align:center; max-width:900px; margin:0 auto 50px; color:#cbd5f5;">
+    Data berikut menggambarkan peran strategis Jakarta Pusat sebagai pusat pemerintahan dan aktivitas ekonomi nasional. Visualisasi grafik digunakan untuk memudahkan pemahaman masyarakat.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Distribusi Fungsi Wilayah</h3>
+      <canvas id="chartFungsi"></canvas>
+      <p style="margin-top:15px;">
+        Mayoritas wilayah Jakarta Pusat digunakan untuk fungsi pemerintahan dan perkantoran, disusul kawasan bisnis dan ruang publik.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Aktivitas Harian</h3>
+      <canvas id="chartAktivitas"></canvas>
+      <p style="margin-top:15px;">
+        Aktivitas harian didominasi oleh kegiatan perkantoran dan pelayanan publik yang berlangsung sepanjang hari kerja.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Moda Transportasi Utama</h3>
+      <canvas id="chartTransportasi"></canvas>
+      <p style="margin-top:15px;">
+        Transportasi massal menjadi tulang punggung mobilitas masyarakat Jakarta Pusat.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const textColor = '#cbd5f5';
+
+  new Chart(document.getElementById('chartFungsi'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Pemerintahan', 'Bisnis & Perkantoran', 'Ruang Publik', 'Permukiman'],
+      datasets: [{
+        data: [40, 30, 15, 15],
+        backgroundColor: ['#38bdf8', '#a78bfa', '#22c55e', '#facc15']
+      }]
+    },
+    options: {
+      plugins: { legend: { labels: { color: textColor } } }
+    }
+  });
+
+  new Chart(document.getElementById('chartAktivitas'), {
+    type: 'bar',
+    data: {
+      labels: ['Pemerintahan', 'Bisnis', 'Pelayanan Publik', 'Pariwisata'],
+      datasets: [{
+        data: [35, 30, 25, 10],
+        backgroundColor: '#38bdf8'
+      }]
+    },
+    options: {
+      scales: {
+        x: { ticks: { color: textColor } },
+        y: { ticks: { color: textColor } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  new Chart(document.getElementById('chartTransportasi'), {
+    type: 'pie',
+    data: {
+      labels: ['MRT', 'KRL', 'TransJakarta', 'Kendaraan Pribadi'],
+      datasets: [{
+        data: [25, 30, 30, 15],
+        backgroundColor: ['#38bdf8', '#22c55e', '#a78bfa', '#f97316']
+      }]
+    },
+    options: {
+      plugins: { legend: { labels: { color: textColor } } }
+    }
+  });
+</script>
+
+<section id="fakta">
+  <h2 class="section-title">Fakta Strategis Jakarta Pusat</h2>
+  <div class="stats">
+    <div class="stat">
+      <h2>8</h2>
+      <p>Kecamatan inti pemerintahan dan bisnis nasional</p>
+    </div>
+    <div class="stat">
+      <h2>100+</h2>
+      <p>Kementerian, lembaga negara, dan kantor strategis</p>
+    </div>
+    <div class="stat">
+      <h2>70%</h2>
+      <p>Aktivitas kebijakan nasional berpusat di wilayah ini</p>
+    </div>
+    <div class="stat">
+      <h2>24/7</h2>
+      <p>Aktivitas ekonomi, pemerintahan, dan layanan publik</p>
+    </div>
+  </div>
+</section>
+
+<section id="peta">
+  <h2 class="section-title">Peta Wilayah Administrasi Jakarta Pusat</h2>
+  <p style="text-align:center; max-width:900px; margin:0 auto 40px; color:#cbd5f5;">
+    Peta berikut menampilkan wilayah administratif Jakarta Pusat beserta posisi strategisnya di Provinsi DKI Jakarta. Informasi ini digunakan sebagai dasar perencanaan, pelayanan publik, dan koordinasi pemerintahan.
+  </p>
+
+  <!-- PETA STATIS (PASTI MUNCUL) -->
+  <div class="grid">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Jakarta_Central_City_Map.svg" alt="Peta Jakarta Pusat" style="width:100%; border-radius:18px;">
+      <h3 style="margin-top:20px;">Peta Administratif Jakarta Pusat</h3>
+      <p>
+        Peta ini menunjukkan batas wilayah Jakarta Pusat yang terdiri dari 8 kecamatan dan berfungsi sebagai pusat pemerintahan nasional.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Administrative_map_of_Jakarta.svg" alt="Peta DKI Jakarta" style="width:100%; border-radius:18px;">
+      <h3 style="margin-top:20px;">Posisi Jakarta Pusat di DKI Jakarta</h3>
+      <p>
+        Jakarta Pusat berada di tengah Provinsi DKI Jakarta dan dikelilingi oleh Jakarta Barat, Timur, Selatan, serta Jakarta Utara.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="layanan">
+  <h2 class="section-title">Pelayanan Publik Unggulan</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Administrasi Kependudukan</h3>
+      <p>
+        Pelayanan KTP, Kartu Keluarga, Akta Kelahiran, dan dokumen kependudukan lainnya dilaksanakan secara terintegrasi dan berbasis digital untuk meningkatkan efisiensi serta transparansi layanan.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Perizinan & Investasi</h3>
+      <p>
+        Jakarta Pusat menyediakan layanan perizinan usaha dan investasi melalui sistem daring yang mendukung iklim usaha kondusif dan pertumbuhan ekonomi berkelanjutan.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Layanan Sosial & Publik</h3>
+      <p>
+        Pemerintah Jakarta Pusat berkomitmen memberikan pelayanan sosial, kesehatan, dan kesejahteraan masyarakat secara adil, merata, dan berkelanjutan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="visi">
+  <h2 class="section-title">Visi & Arah Masa Depan</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Smart Government</h3>
+      <p>
+        Jakarta Pusat diarahkan menjadi pusat pemerintahan berbasis teknologi digital dengan pelayanan publik yang cepat, transparan, dan terintegrasi. Penerapan e-government dan sistem kota cerdas menjadi prioritas utama.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Global Business District</h3>
+      <p>
+        Dengan infrastruktur modern dan konektivitas tinggi, Jakarta Pusat diproyeksikan sebagai pusat bisnis global Asia Tenggara, mendukung pertumbuhan ekonomi nasional dan kolaborasi internasional.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Kota Berkelanjutan & Berkarakter</h3>
+      <p>
+        Pembangunan berorientasi pada keberlanjutan lingkungan, ruang publik hijau, transportasi massal, serta pelestarian bangunan dan kawasan bersejarah sebagai identitas kota.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Jakarta Pusat — Jantung Pemerintahan & Bisnis Indonesia</p>
+</footer>
+
+</body>
+</html>
